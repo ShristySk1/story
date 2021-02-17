@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity(), PageViewOperator {
 
     companion object {
         private const val PAGE_COUNT = 5
+
         /* key: page-count, value: story-count */
         val progressState = SparseIntArray()
     }
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity(), PageViewOperator {
                 Timber.d("onPageScrollCanceled()")
                 currentFragment()?.resume()
             }
+
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 currentPage = position
@@ -126,6 +128,7 @@ class MainActivity : AppCompatActivity(), PageViewOperator {
         override fun getCount(): Int {
             return PAGE_COUNT
         }
+
         /**
          * https://qiita.com/chooblarin/items/88b4accac0cbb6944d4b#%E6%96%B9%E6%B3%953-instantiateitem%E3%82%92%E4%BD%BF%E3%81%86
          */
